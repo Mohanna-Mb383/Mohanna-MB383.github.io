@@ -11,6 +11,7 @@
       padding: 0;
       background: #0b1020;
       color: #f4f7ff;
+      line-height: 1.6;
     }
     .wrapper {
       max-width: 900px;
@@ -27,86 +28,107 @@
     header img {
       width: 150px;
       height: 150px;
-      object-fit: cover;
       border-radius: 16px;
+      object-fit: cover;
       border: 2px solid rgba(255,255,255,0.2);
     }
     h1 {
-      margin: 0 0 .4rem;
-      font-size: 1.9rem;
+      margin: 0 0 .3rem;
+      font-size: 2rem;
+      color: #ffffff;
     }
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       margin-top: 2rem;
-      margin-bottom: .6rem;
+      margin-bottom: .5rem;
+      color: #e3e7ff;
     }
     .muted {
       color: #9aa3c6;
-      font-size: 0.95rem;
+      font-size: 1rem;
+    }
+    .tagline {
+      font-size: 1rem;
+      color: #cdd3ea;
+      margin-bottom: .4rem;
     }
     a {
       color: #4dd2ff;
       text-decoration: none;
     }
-    a:hover { text-decoration: underline; }
-    .tagline {
-      margin-top: .3rem;
-      font-size: .98rem;
-      color: #c3c9e6;
+    a:hover {
+      text-decoration: underline;
     }
     ul {
       margin: .4rem 0 .8rem 1.2rem;
+    }
+    .logos {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+    .logos img {
+      height: 50px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 4px 8px;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
+    
     <header>
       <img src="profile.jpg" alt="Portrait of Mohanna Mousabeigi">
       <div>
         <h1>Mohanna Mousabeigi</h1>
         <div class="tagline">
-          PhD Student in Computer Science and Engineering, Instituto Superior Técnico (IST), Lisbon  
+          PhD Student in Computer Science and Engineering,<br>
+          Instituto Superior Técnico (IST), Lisbon
         </div>
         <p class="muted">
           Email: <a href="mailto:mohanna.mousabeigi@tecnico.ulisboa.pt">mohanna.mousabeigi@tecnico.ulisboa.pt</a><br>
-          GitHub: <a href="https://github.com/Mohanna-Mb383">github.com/Mohanna-Mb383</a>
+          GitHub: <a href="https://github.com/Mohanna-Mb383">github.com/Mohanna-Mb383</a><br>
+          Website: <a href="https://Mohanna-MB383.github.io">Mohanna-MB383.github.io</a>
         </p>
       </div>
     </header>
-<section>
-  <h2>Background</h2>
-     <p>
-M.Sc. in Mathematical Statistics with experience in machine learning, deep learning, and statistical modelling.
- </p>
-    </section>
-       
+
     <section>
       <h2>Research Topic</h2>
       <p>
-        Graph Neural Networks and Topological Data Analysis for phylogenetic inference, with a focus on
+        Graph Neural Networks and Topological Data Analysis for phylogenetic inference, with a focus on 
         bacterial datasets and scalable methods under missing data and evolutionary complexity.
       </p>
     </section>
 
     <section>
-      <h2>Research Summary</h2>
+      <h2>Short Description</h2>
       <p class="muted">
-        I work on GNN- and transformer-based models for bacterial phylogenetics, focusing on sequence
-        encoding (cgMLST/SNP, gap-aware), graph and axial-attention architectures, and robustness to
-        missing data. I am also exploring generative ideas inspired by methods such as PHYLOVAE.
+        I work on GNN- and transformer-based models for bacterial phylogenetics, focusing on sequence 
+        encoding (cgMLST/SNP, gap-aware), graph and axial-attention architectures, and robustness to 
+        missing data. I am also exploring generative ideas inspired by models such as PHYLOVAE.
       </p>
     </section>
 
- <section>
+    <section>
       <h2>Latest Work</h2>
       <p class="muted">
-        GNNs and models, missing-data robustness, and gtransformers for bacterial phylogenetics,
-        with emphasis on sequence encoding, axial/graph enerative ideas inspired by PHYLOVAE.
+        GNN-based models and transformers for bacterial phylogenetics, with emphasis on sequence encoding,
+        robustness to missing data, axial/graph architectures, and generative ideas inspired by PHYLOVAE.
       </p>
     </section>
 
-    
+    <section>
+      <h2>Background</h2>
+      <p class="muted">
+        M.Sc. in Mathematical Statistics, with experience in machine learning, deep learning, graph neural 
+        networks, and statistical modelling applied to biological and real-world datasets.
+      </p>
+    </section>
+
     <section>
       <h2>Supervisors</h2>
       <ul class="muted">
@@ -114,6 +136,13 @@ M.Sc. in Mathematical Statistics with experience in machine learning, deep learn
         <li>Prof. Cátia Vaz (ISEL &amp; INESC-ID Lisboa)</li>
       </ul>
     </section>
+
+    <div class="logos">
+      <img src="inesc-logo.png" alt="INESC-ID Lisboa logo">
+      <img src="ist-logo.png" alt="Instituto Superior Técnico logo">
+    </div>
+
   </div>
 </body>
 </html>
+
