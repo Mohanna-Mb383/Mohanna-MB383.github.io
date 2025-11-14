@@ -10,7 +10,6 @@
       --bg: #02030a;
       --overlay: rgba(2,3,10,0.85);
       --accent: #4dd2ff;
-      --accent-soft: rgba(77,210,255,0.15);
       --text-main: #f6f7ff;
       --text-muted: #ced2e9;
       --panel-bg: rgba(4,6,18,0.9);
@@ -28,7 +27,7 @@
       background:
         radial-gradient(circle at 10% 0%, rgba(77,210,255,0.20) 0, transparent 55%),
         radial-gradient(circle at 90% 100%, rgba(131,88,255,0.26) 0, transparent 55%),
-        url("stars.jpg") center/cover no-repeat,
+        url("stars.png") center/cover no-repeat,
         var(--bg);
       display: flex;
       align-items: center;
@@ -36,7 +35,6 @@
       text-align: center;
     }
 
-    /* پوشش برای خوانایی روی عکس */
     .overlay {
       position: fixed;
       inset: 0;
@@ -61,7 +59,43 @@
     .subtitle {
       font-size: clamp(1.1rem, 2.2vw, 1.6rem);
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* portrait */
+    .portrait {
+      margin-bottom: 1.2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .portrait-inner {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      padding: 4px;
+      background: radial-gradient(circle at 30% 0%, #4dd2ff, #9b8cff);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    }
+
+    .portrait-inner img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(5,7,20,0.95);
+    }
+
+    /* short contact line under photo */
+    .contact-inline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+
+    .contact-inline span {
+      margin: 0 0.4rem;
+      opacity: 0.7;
     }
 
     /* clock */
@@ -73,12 +107,6 @@
     .clock-time {
       font-size: clamp(2rem, 4vw, 2.7rem);
       font-weight: 500;
-    }
-
-    .clock-date {
-      margin-top: .35rem;
-      font-size: 1rem;
-      color: var(--text-muted);
     }
 
     /* panels */
@@ -95,7 +123,7 @@
       border: 1px solid var(--panel-border);
       border-radius: var(--radius-lg);
       padding: 0.9rem 1.1rem;
-      width: min(290px, 100%);
+      width: min(300px, 100%);
       text-align: left;
       box-shadow: 0 18px 40px rgba(0,0,0,0.6);
     }
@@ -136,7 +164,7 @@
 
     .panel.open .panel-body {
       opacity: 1;
-      max-height: 500px; /* کافی است برای متن‌ها */
+      max-height: 500px;
     }
 
     .panel-body p {
@@ -169,6 +197,22 @@
       margin-right: .25rem;
     }
 
+    /* logos */
+    .logos {
+      margin-top: .6rem;
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+    }
+
+    .logos img {
+      height: 42px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 4px 10px;
+      border: 1px solid rgba(12,20,40,0.4);
+    }
+
     @media (max-width: 640px) {
       .shell { padding: 2rem 1.2rem; }
       .panels { gap: 1rem; }
@@ -181,80 +225,137 @@
   <main class="shell">
     <header>
       <h1>Mohanna Mousabeigi</h1>
-      <div class="subtitle">PhD Student in Computer Science and Engineering · Instituto Superior Técnico, Lisbon</div>
+      <div class="subtitle">
+        PhD Student in Computer Science and Engineering, Instituto Superior Técnico (IST), Lisbon
+      </div>
     </header>
 
-    <section class="clock">
-      <div id="clock-time" class="clock-time">00:00</div>
-      <div id="clock-date" class="clock-date">Friday 14 November</div>
+    <!-- photo -->
+    <section class="portrait">
+      <div class="portrait-inner">
+        <img src="profile.jpg" alt="Portrait of Mohanna Mousabeigi">
+      </div>
     </section>
 
-    <section class="panels">
-      <!-- Research -->
-      <article class="panel open" id="panel-research">
-        <div class="panel-header">
-          <div><span class="icon">🔬</span>Research</div>
-          <span class="chevron">▶</span>
-        </div>
-        <div class="panel-body">
-          <p><strong>Topic:</strong> Graph Neural Networks and Topological Data Analysis for phylogenetic inference, with a focus on bacterial datasets and scalable methods under missing data and evolutionary complexity.</p>
-          <p><strong>Current directions:</strong></p>
-          <ul>
-            <li>GNN- and transformer-based models for bacterial phylogenetics.</li>
-            <li>Sequence encoding (cgMLST/SNP, gap-aware) and axial / graph attention.</li>
-            <li>Robustness to missing data and complex evolutionary scenarios.</li>
-            <li>Generative ideas inspired by models such as PHYLOVAE.</li>
-          </ul>
-        </div>
-      </article>
+    <!-- short contact line -->
+    <div class="contact-inline">
+      ID: 1115747
+      <span>·</span>
+      <a href="mailto:mohanna.mousabeigi@tecnico.ulisboa.pt">mohanna.mousabeigi@tecnico.ulisboa.pt</a>
+      <span>·</span>
+      <a href="https://github.com/Mohanna-MB383">GitHub</a>
+    </div>
 
-      <!-- Background -->
+    <!-- clock (only time) -->
+    <section class="clock">
+      <div id="clock-time" class="clock-time">00:00</div>
+    </section>
+
+    <!-- collapsible panels -->
+    <section class="panels">
+      <!-- Background (متن کامل قبلی) -->
       <article class="panel" id="panel-background">
         <div class="panel-header">
           <div><span class="icon">🎓</span>Background</div>
           <span class="chevron">▶</span>
         </div>
         <div class="panel-body">
-          <p>M.Sc. in Mathematical Statistics, with experience in machine learning, deep learning, graph neural networks, and statistical modelling applied to biological and real-world datasets.</p>
-          <p><strong>Areas of interest:</strong></p>
-          <ul>
-            <li>Statistical modelling and inference.</li>
-            <li>Machine learning on structured and relational data.</li>
-            <li>Applications in bacterial genomics and phylogenetics.</li>
-          </ul>
+          <p>
+            M.Sc. in Mathematical Statistics, with experience in machine learning, deep learning, graph neural
+            networks, and statistical modelling applied to biological and real-world datasets.
+          </p>
         </div>
       </article>
 
-      <!-- Supervisors & Links -->
-      <article class="panel" id="panel-supervisors">
+      <!-- Research Topic -->
+      <article class="panel open" id="panel-topic">
         <div class="panel-header">
-          <div><span class="icon">👥</span>Supervisors &amp; Links</div>
+          <div><span class="icon">🔬</span>Research Topic</div>
           <span class="chevron">▶</span>
         </div>
         <div class="panel-body">
-          <p><strong>Supervisors:</strong></p>
+          <p>
+            Graph Neural Networks and Topological Data Analysis for phylogenetic inference, with a focus on 
+            bacterial datasets and scalable methods under missing data and evolutionary complexity.
+          </p>
+        </div>
+      </article>
+
+      <!-- Research Summary -->
+      <article class="panel" id="panel-summary">
+        <div class="panel-header">
+          <div><span class="icon">📄</span>Research Summary</div>
+          <span class="chevron">▶</span>
+        </div>
+        <div class="panel-body">
+          <p>
+            I work on GNN- and transformer-based models for bacterial phylogenetics, focusing on sequence
+            encoding (cgMLST/SNP, gap-aware), graph and axial-attention architectures, and robustness to
+            missing data. I am also exploring generative ideas inspired by models such as PHYLOVAE.
+          </p>
+        </div>
+      </article>
+
+      <!-- Latest Work -->
+      <article class="panel" id="panel-latest">
+        <div class="panel-header">
+          <div><span class="icon">🧪</span>Latest Work</div>
+          <span class="chevron">▶</span>
+        </div>
+        <div class="panel-body">
+          <p>
+            GNN-based models and transformers for bacterial phylogenetics, with emphasis on sequence encoding,
+            robustness to missing data, axial/graph architectures, and generative ideas inspired by PHYLOVAE.
+          </p>
+        </div>
+      </article>
+
+      <!-- Supervisors -->
+      <article class="panel" id="panel-supervisors">
+        <div class="panel-header">
+          <div><span class="icon">👥</span>Supervisors</div>
+          <span class="chevron">▶</span>
+        </div>
+        <div class="panel-body">
           <ul>
             <li>Prof. Alexandre Francisco (IST &amp; INESC-ID Lisboa)</li>
             <li>Prof. Cátia Vaz (ISEL &amp; INESC-ID Lisboa)</li>
           </ul>
+          <div class="logos">
+            <img src="ist-logo.png" alt="Instituto Superior Técnico logo">
+            <img src="inesc-logo.png" alt="INESC-ID Lisboa logo">
+          </div>
+        </div>
+      </article>
 
+      <!-- Links / full contact -->
+      <article class="panel" id="panel-links">
+        <div class="panel-header">
+          <div><span class="icon">🔗</span>Links</div>
+          <span class="chevron">▶</span>
+        </div>
+        <div class="panel-body">
           <div class="links-list">
-            <div><span class="links-label">Email:</span>
+            <div>
+              <span class="links-label">Email:</span>
               <a href="mailto:mohanna.mousabeigi@tecnico.ulisboa.pt">
                 mohanna.mousabeigi@tecnico.ulisboa.pt
               </a>
             </div>
-            <div><span class="links-label">GitHub:</span>
+            <div>
+              <span class="links-label">GitHub:</span>
               <a href="https://github.com/Mohanna-MB383" target="_blank" rel="noopener">
                 github.com/Mohanna-MB383
               </a>
             </div>
-            <div><span class="links-label">Personal site:</span>
+            <div>
+              <span class="links-label">Website:</span>
               <a href="https://Mohanna-MB383.github.io" target="_blank" rel="noopener">
                 Mohanna-MB383.github.io
               </a>
             </div>
-            <div><span class="links-label">IST page:</span>
+            <div>
+              <span class="links-label">IST Page:</span>
               <a href="https://web.tecnico.ulisboa.pt/ist1115747/" target="_blank" rel="noopener">
                 web.tecnico.ulisboa.pt/ist1115747
               </a>
@@ -266,33 +367,20 @@
   </main>
 
   <script>
-    // ساعت و تاریخ زنده
+    // فقط ساعت
     function updateClock() {
       const now = new Date();
-
-      const hours = now.getHours().toString().padStart(2, "0");
-      const minutes = now.getMinutes().toString().padStart(2, "0");
-
-      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-      const months = ["January","February","March","April","May","June",
-                      "July","August","September","October","November","December"];
-
-      const dayName = days[now.getDay()];
-      const day = now.getDate();
-      const month = months[now.getMonth()];
-      const year = now.getFullYear();
-
-      document.getElementById("clock-time").textContent = `${hours}:${minutes}`;
-      document.getElementById("clock-date").textContent = `${dayName} ${day} ${month} ${year}`;
+      const h = String(now.getHours()).padStart(2, "0");
+      const m = String(now.getMinutes()).padStart(2, "0");
+      document.getElementById("clock-time").textContent = `${h}:${m}`;
     }
     updateClock();
     setInterval(updateClock, 1000);
 
-    // باز/بسته کردن پنل‌ها
+    // باز/بسته شدن پنل‌ها
     document.querySelectorAll(".panel-header").forEach(header => {
       header.addEventListener("click", () => {
-        const panel = header.parentElement;
-        panel.classList.toggle("open");
+        header.parentElement.classList.toggle("open");
       });
     });
   </script>
