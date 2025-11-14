@@ -86,7 +86,7 @@
       border: 3px solid rgba(5,7,20,0.95);
     }
 
-    /* short contact line under photo */
+    /* short line under photo (no links here) */
     .contact-inline {
       font-size: 0.9rem;
       color: var(--text-muted);
@@ -237,23 +237,19 @@
       </div>
     </section>
 
-    <!-- short contact line -->
+    <!-- short text, no links -->
     <div class="contact-inline">
-      ID: 1115747
-      <span>·</span>
-      <a href="mailto:mohanna.mousabeigi@tecnico.ulisboa.pt">mohanna.mousabeigi@tecnico.ulisboa.pt</a>
-      <span>·</span>
-      <a href="https://github.com/Mohanna-MB383">GitHub</a>
+      ID: 1115747 <span>·</span> PhD Student <span>·</span> IST Lisbon
     </div>
 
-    <!-- clock (only time) -->
+    <!-- clock (time only) -->
     <section class="clock">
       <div id="clock-time" class="clock-time">00:00</div>
     </section>
 
     <!-- collapsible panels -->
     <section class="panels">
-      <!-- Background (متن کامل قبلی) -->
+      <!-- Background -->
       <article class="panel" id="panel-background">
         <div class="panel-header">
           <div><span class="icon">🎓</span>Background</div>
@@ -310,7 +306,7 @@
         </div>
       </article>
 
-      <!-- Supervisors -->
+      <!-- Supervisors (ONLY supervisors + logos) -->
       <article class="panel" id="panel-supervisors">
         <div class="panel-header">
           <div><span class="icon">👥</span>Supervisors</div>
@@ -328,7 +324,7 @@
         </div>
       </article>
 
-      <!-- Links / full contact -->
+      <!-- Links (ONLY links) -->
       <article class="panel" id="panel-links">
         <div class="panel-header">
           <div><span class="icon">🔗</span>Links</div>
@@ -367,7 +363,7 @@
   </main>
 
   <script>
-    // فقط ساعت
+    // clock (time only)
     function updateClock() {
       const now = new Date();
       const h = String(now.getHours()).padStart(2, "0");
@@ -377,7 +373,7 @@
     updateClock();
     setInterval(updateClock, 1000);
 
-    // باز/بسته شدن پنل‌ها
+    // toggle panels
     document.querySelectorAll(".panel-header").forEach(header => {
       header.addEventListener("click", () => {
         header.parentElement.classList.toggle("open");
